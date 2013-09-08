@@ -25,6 +25,21 @@ describe Pizza::Pie do
 
   end  
 
+  describe 'vegetarian?' do
+    it 'will check if all toppings on a pizza are vegetarian' do
+      toppings = [
+        Pizza::Topping.new('pineapple', vegetarian: true),
+        Pizza::Topping.new('sausage'),
+        Pizza::Topping.new('onions', vegetarian: true)
+      ]
+
+      pizza = Pizza::Pie.new(toppings)
+
+      expect(pizza.vegetarian?).to eq(false)
+    end
+
+  end
+
 end 
 
 describe Pizza::Topping do
