@@ -11,6 +11,12 @@ describe Pizza::Pie do
 
       expect(topping.name).to eq('olives')
     end
+
+    it "should show if toppings are vegetarian" do
+      topping = Pizza::Topping.new 'bell peppers', vegetarian: true
+
+      expect(topping.vegetarian).to eq(true)
+    end
   end
 
 end 
