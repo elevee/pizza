@@ -1,13 +1,4 @@
 module Pizza
-  class Pie
-
-    attr_accessor :toppings
-
-    def initialize(toppings=[])
-      @toppings = toppings
-    end
-
-  end
 
   class Topping
 
@@ -23,4 +14,19 @@ module Pizza
     end
 
   end
+
+  class Pie
+
+    attr_accessor :toppings
+
+    cheese_default = Pizza::Topping.new('cheese', vegetarian: true)
+
+    def initialize(toppings=[cheese_default])
+      @toppings = toppings
+    end
+
+  end
+
+
+  
 end
