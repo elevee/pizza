@@ -8,8 +8,14 @@ module Pizza
       @toppings = toppings
     end
 
+    def vegetarian?
+      self.toppings.any? do |topping|
+        topping.vegetarian = false
+      end
+    end
+
   end
-  
+
   class Topping
 
     attr_accessor :name, :vegetarian
