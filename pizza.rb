@@ -11,7 +11,6 @@ module Pizza
     def vegetarian?
       # Returns boolean for if any item in toppings array returns NOT vegetarian
       !@toppings.any? { |topping| !topping.vegetarian }  
-     
     end
 
   end

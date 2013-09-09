@@ -53,11 +53,11 @@ describe Pizza::Pie do
 
   describe '.add_topping' do
     it "should be able to add toppings to a Pie" do
-      topping = []
-      topping.push(Pizza::Topping.new 'bell peppers', vegetarian: true)
-      pizza = Pizza::Pie.new(topping)
-
-      expect(pizza.topping.count).to eq(2)
+      pizza = Pizza::Pie.new()
+      new_topping = 'anchovies'
+      pizza.add_topping(new_topping)
+      
+      expect(pizza.toppings.count).to eq(2)
     end
   end
 
@@ -67,17 +67,15 @@ describe Pizza::Topping do
 
   describe '.initialize' do
     it "sets the name of the topping" do
-      topping = []
-      topping.push(Pizza::Topping.new('olives'))
+      topping = Pizza::Topping.new('olives')
 
-      expect(topping[0].name).to eq('olives')
+      expect(topping.name).to eq('olives')
     end
 
     it "should show if toppings are vegetarian" do
-      topping = []
-      topping.push(Pizza::Topping.new 'bell peppers', vegetarian: true)
+      topping = Pizza::Topping.new 'bell peppers', vegetarian: true
 
-      expect(topping[0].vegetarian).to eq(true)
+      expect(topping.vegetarian).to eq(true)
     end
 
   end
