@@ -54,7 +54,7 @@ describe Pizza::Pie do
   describe '.add_topping' do
     it "should be able to add toppings to a Pie" do
       pizza = Pizza::Pie.new()
-      new_topping = 'anchovies'
+      new_topping = Pizza::Topping.new('olives', vegetarian: true)
       pizza.add_topping(new_topping)
       
       expect(pizza.toppings.count).to eq(2)

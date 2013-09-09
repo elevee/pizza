@@ -13,6 +13,10 @@ module Pizza
       !@toppings.any? { |topping| !topping.vegetarian }  
     end
 
+    def add_topping(topping_object)
+      self.toppings.push(topping_object)
+    end
+
   end
 
   class Topping
