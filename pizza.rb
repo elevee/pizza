@@ -15,11 +15,7 @@ module Pizza
       end
       
       #if THAT array has nothing in it, we coo.
-      if meat_fest.any? == false
-        return true
-      else
-        return false
-      end
+      !meat_fest.any?
      
     end
 
