@@ -9,9 +9,18 @@ module Pizza
     end
 
     def vegetarian?
-      self.toppings.any? do |topping|
-        topping.vegetarian = false
+      #write a select method to isolate all the non veggie stuff
+      meat_fest = self.toppings.select do |topping|
+        topping.vegetarian == false
       end
+      
+      #if THAT array has nothing in it, we coo.
+      if meat_fest.any? == false
+        return true
+      else
+        return false
+      end
+     
     end
 
   end
