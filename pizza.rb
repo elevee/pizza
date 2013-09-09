@@ -9,13 +9,8 @@ module Pizza
     end
 
     def vegetarian?
-      #write a select method to isolate all the non veggie stuff
-      meat_fest = self.toppings.select do |topping|
-        topping.vegetarian == false
-      end
-      
-      #if THAT array has nothing in it, we coo.
-      !meat_fest.any?
+      # Returns boolean for if any item in toppings array returns NOT vegetarian
+      !@toppings.any? { |topping| !topping.vegetarian }  
      
     end
 
